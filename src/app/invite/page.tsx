@@ -1,8 +1,8 @@
 import Image from "next/image";
+import { Ranking } from "./ranking";
+import { Stats } from "./stats";
+import { InviteLinkInput } from "./invite-link-input";
 import logo from "../../assets/logo.svg";
-import { InputField, InputIcon, InputRoot } from "@/components/input";
-import { Copy, Link } from "lucide-react";
-import { IconButton } from "@/components/icon-button";
 
 export default function InvitePage() {
   return (
@@ -33,22 +33,13 @@ export default function InvitePage() {
             </p>
           </div>
 
-          <InputRoot>
-            <InputIcon>
-              <Link className="size-5" />
+          <InviteLinkInput />
 
-              <InputField
-                readOnly
-                defaultValue={"http://localhos:3000/invite/239213"}
-              />
-
-              <IconButton className="-mr-2">
-                <Copy className="size-5" />
-              </IconButton>
-            </InputIcon>
-          </InputRoot>
+          <Stats />
         </div>
       </div>
+
+      <Ranking />
     </div>
   );
 }
